@@ -24,8 +24,7 @@ jobs:
       run: python github_stats.py
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v2  # 使用 v2 版本
+      uses: actions/upload-artifact@v4.6.1  # 使用 v4.6.1 版本
       with:
         name: results
         path: output.txt
-
