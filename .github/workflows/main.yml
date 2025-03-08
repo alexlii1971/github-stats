@@ -23,13 +23,8 @@ jobs:
     - name: Run script
       run: python github_stats.py
 
-    - name: Upload results
-      run: |
-        mkdir -p results
-        mv output.txt results/
-
     - name: Upload artifact
       uses: actions/upload-artifact@v3  # 使用最新的 v3 版本
       with:
         name: results
-        path: results/*
+        path: output.txt
