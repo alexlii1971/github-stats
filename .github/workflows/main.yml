@@ -3,33 +3,33 @@ name: Run GitHub Stats Script
 on:
   push:
     branches:
-      - main  # 确保分支名与默认分支一致，若默认分支是 main，则此处应为 main
+      - main  # 确保分支名与默认分支一致
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2  # 确保使用最新版本的 actions/checkout
+      uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'  # 设置 Python 的版本，可以指定确切的版本，例如 '3.9'
+        python-version: '3.x'
 
     - name: Install dependencies
-      run: pip install requests  # 安装脚本依赖，若需要额外依赖请补充
+      run: pip install requests
 
     - name: Run script
-      run: python github_stats.py  # 运行 GitHub Stats 脚本
+      run: python github_stats.py
 
     - name: Upload results
       run: |
-        mkdir -p results  # 创建存放结果的文件夹
-        mv output.txt results/  # 移动结果文件
+        mkdir -p results
+        mv output.txt results/
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3  # 使用 actions/upload-artifact@v3 上传构建产物
+      uses: actions/upload-artifact@v2  # 使用 v2 版本
       with:
-        name: results  # 设置上传文件的名称
-        path: results/*  # 设置上传文件的路径
+        name: results
+        path: results/*
