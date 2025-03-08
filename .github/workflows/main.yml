@@ -1,0 +1,33 @@
+name: Run GitHub Stats Script
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+        
+    - name: Install dependencies
+      run: pip install requests
+
+    - name: Run script
+      run: python github_stats.py
+
+    - name: Upload results
+      run: |
+        mkdir -p results
+        mv output.txt results/
+      # 配置上传结果文件
+      artifacts:
+        name: results
+        paths: results/*
