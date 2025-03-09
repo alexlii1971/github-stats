@@ -382,9 +382,7 @@
     GitHub: [https://github.com/ButterCMS/buttercms](https://github.com/ButterCMS/buttercms)  
     ⭐2.8k | 🍴360 | API驱动
 
-94. **Contentful CLI**  
-    GitHub: [https://github.com/contentful/contentful-cli](https://github.com/contentful/contentful-cli)  
-    ⭐2.5k | 🍴320 | 内容管理
+
 
 95. **Kentico Kontent**  
     GitHub: [https://github.com/Kentico/kontent](https://github.com/Kentico/kontent)  
