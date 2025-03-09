@@ -1,14 +1,4 @@
-支持调用kubernetes API的headless CMS：
-1. 免费开源及开箱即用的的headless cms；
-2. 采用现代化而非传统的library与framework；
-3. 生支持调用kubernetes api；
-4. 性能最好优于wordpress；
-5. 以框架为基础进行分类；
-6. 具有模块化、微服务化的架构设计，方便模块化、微服务化的集群扩展部署；
-7. 非php、java、 .net的要开源项目；
-8. 现代化、稳定，以github上star与fork热度排名。
-─────────────────────────────  
- 
+
 
 ─────────────────────────────  
 【二、基于 Node.js 的系统】
