@@ -372,9 +372,7 @@
    GitHub: [https://github.com/ButterCMS/buttercms](https://github.com/ButterCMS/buttercms)  
    ⭐0 | 🍴0
 
-94. **contentful-cli**  
-   GitHub: [https://github.com/contentful/contentful-cli](https://github.com/contentful/contentful-cli)  
-   ⭐0 | 🍴0
+
 
 95. **kontent**  
    GitHub: [https://github.com/Kentico/kontent](https://github.com/Kentico/kontent)  
