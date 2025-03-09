@@ -8,42 +8,7 @@
 7. 非php、java、 .net的要开源项目；
 8. 现代化、稳定，以github上star与fork热度排名。
 ─────────────────────────────  
-【一、基于 PHP 的系统】
-
-1. Drupal – https://github.com/drupal/drupal  
-2. Joomla – https://github.com/joomla/joomla-cms  
-3. OctoberCMS – https://github.com/octobercms/october  
-4. Grav CMS – https://github.com/getgrav/grav  
-5. PyroCMS – https://github.com/pyrocms/pyrocms  
-6. Bolt CMS – https://github.com/bolt/bolt  
-7. Pagekit – https://github.com/pagekit/pagekit  
-8. Microweber – https://github.com/microweber/microweber  
-9. GetSimple CMS – https://github.com/GetSimpleCMS/GetSimpleCMS  
-10. Textpattern – https://github.com/textpattern/textpattern  
-11. Concrete CMS – https://github.com/concrete5/concrete5  
-12. Cockpit CMS – https://github.com/agentejo/cockpit  
-13. SilverStripe CMS – https://github.com/silverstripe/silverstripe-cms  
-14. e107 CMS – https://github.com/e107inc/e107  
-15. MODX Revolution – https://github.com/modxcms/revolution  
-16. Sulu CMS – https://github.com/sulu/sulu  
-17. TYPO3 CMS – https://github.com/TYPO3/TYPO3.CMS  
-18. Contao CMS – https://github.com/contao/contao  
-19. Pimcore – https://github.com/pimcore/pimcore  
-20. CMSimple – https://github.com/cmsimple-org/cmsimple  
-21. Pico CMS – https://github.com/picocms/Pico  
-22. Pluck CMS – https://github.com/pluck-cms/pluck  
-23. FUEL CMS – https://github.com/daylerees/FUEL-CMS  
-24. Anchor CMS – https://github.com/anchorcms/anchor-cms  
-25. Chyrp / Chyrp Lite – https://github.com/Chyrp/chyrp-lite  
-26. Symphony CMS – https://github.com/symphonycms/symphony-2  
-27. Phile CMS – https://github.com/PhileCMS/Phile  
-28. CMS Made Simple – https://github.com/meso-cms/cmsmadesimple  
-29. TypiCMS – https://github.com/TypiCMS/TypiCMS  
-30. Tiki Wiki CMS Groupware – https://github.com/tikiorg/tiki  
-31. Bludit – https://github.com/bludit/bludit  
-32. CouchCMS – (暂无统一 GitHub 链接)  
-33. WonderCMS – https://github.com/robiso/wondercms  
-34. （其他小众 PHP 开源项目）
+ 
 
 ─────────────────────────────  
 【二、基于 Node.js 的系统】
@@ -208,9 +173,7 @@
    - 特点: 开源内容管理系统，支持静态网站生成器
 ----------------
 
-Andy，下面提供一份包含 100 个候选方案的列表，这些项目均为开源、现代化的 headless CMS 或与之接近的系统（可开箱即用或通过扩展实现 headless 及 Kubernetes API 对接功能），同时不采用 PHP、Java 或 .NET 技术。候选方案按照基础框架（或开发语言/技术栈）进行分类，每项均附有官方网站或 GitHub 地址（均非 Wikipedia 链接）。注意：其中有些项目原生可能不是“完全”的 headless CMS，但均能在 decoupled（分离前后端）、静态/无头模式下运行，便于扩展、模块化与微服务部署。  
  
-以下列表中（部分项目为“starter”或示例项目，方便快速上手部署），各项目编号仅供参考，排名顺序不代表质量优劣，实际选择时请根据社区热度、现代化程度、稳定性及与 Kubernetes 集成的便捷性进行评估。  
 
 ---
 
