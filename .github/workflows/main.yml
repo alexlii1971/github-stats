@@ -24,7 +24,7 @@ jobs:
       run: python github_stats.py
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v4.6.1  # 使用 v4.6.1 版本
+      uses: actions/upload-artifact@v4.6.1
       with:
-        name: results
-        path: output.txt
+        name: cms-report  # 更明确的名称
+        path: output.md    # 指向MD文件
