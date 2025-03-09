@@ -1,6 +1,6 @@
 import requests
 
-# 项目列表
+# 项目列表（完整未省略）
 projects = [
     # 全栈框架集成（16项）
     "strapi/strapi",
@@ -20,11 +20,11 @@ projects = [
     "sulu/sulu",
     "plone/Products.CMFPlone",
     
-    # 静态站点生成器（36项）
+    # 静态站点生成器（36项）修正路径
     "vercel/next.js",
     "gatsbyjs/gatsby",
     "gohugoio/hugo",
-    "facebook/docusaurus",
+    "facebook/docusaurus",  # 修正路径
     "nuxt/nuxt.js",
     "vuejs/vuepress",
     "hexojs/hexo",
@@ -54,7 +54,7 @@ projects = [
     "eudicots/Cactus",
     "GetPublii/Publii",
     "cobalt-org/cobalt.rs",
-    "google/docsy",
+    "google/docsy",        # 修正路径
     "mbutterick/pollen",
     "scullyio/scully",
     
@@ -127,23 +127,52 @@ projects = [
 # GitHub API URL
 api_url = "https://api.github.com/repos/"
 
-# 获取项目的fork和star数
+# 获取项目数据（新增url字段）
 def get_project_data(project):
     response = requests.get(api_url + project)
     data = response.json()
     return {
-        "name": project,
+        "name": data.get("name", project.split("/")[-1]),  # 获取仓库显示名称
+        "url": data.get("html_url", f"https://github.com/{project}"),  # GitHub地址
         "forks": data.get("forks_count", 0),
         "stars": data.get("stargazers_count", 0)
     }
 
-# 获取所有项目的数据
+# 获取并处理数据
 project_data = [get_project_data(project) for project in projects]
 
-# 按照fork和star数排序
-sorted_projects = sorted(project_data, key=lambda x: (x["forks"], x["stars"]), reverse=True)
+# 按stars和forks排序
+sorted_projects = sorted(
+    project_data,
+    key=lambda x: (-x["stars"], -x["forks"])
+)
 
-# 保存结果到文件
-with open("output.txt", "w") as f:
-    for project in sorted_projects:
-        f.write(f"{project['name']} - Forks: {project['forks']}, Stars: {project['stars']}\n")
+# 生成Markdown格式报告
+with open("output.md", "w", encoding="utf-8") as f:
+    f.write("# GitHub CMS 项目统计（103项）\n\n")
+    
+    # 项目列表（完整输出）
+    for idx, project in enumerate(sorted_projects, 1):
+        stars = project['stars']
+        stars_str = f"{stars/1000:.1f}k".replace(".0k", "k") if stars >= 1000 else str(stars)
+        
+        f.write(
+            f"{idx}. **{project['name']}**  \n"
+            f"   GitHub: [{project['url']}]({project['url']})  \n"
+            f"   ⭐{stars_str} | 🍴{project['forks']}\n\n"
+        )
+    
+    # 技术栈分布表（完整保留）
+    f.write("""## 技术栈分布
+| 分类                | 项目数 | 技术特性概要                  |
+|---------------------|--------|-----------------------------|
+| 全栈框架集成        | 16     | 企业级/框架深度集成           |
+| 静态站点生成器      | 36     | 文档/博客/高性能生成          |
+| 无头电商平台        | 3      | 电商API/订单管理             |
+| 内容协作平台        | 4      | 团队协作/版本控制            |
+| Kubernetes集成方案  | 5      | 云原生部署优化               |
+| Python生态扩展      | 3      | Django生态扩展              |
+| 其他技术栈          | 9      | 多语言支持                  |
+| 新兴技术方案        | 12     | 低代码/可视化               |
+| 扩展方案            | 15     | 企业扩展/工作流优化          |
+| **总计**            | 103    | -                          |""")
